@@ -10,6 +10,7 @@ export function get() {
 export function getCatch() {
     // axios.get('http://localhost:3000/orders/123')
     // .then((result) => {
+    //     console.log(result);
     //     if(result.status === 200){
     //         setText((JSON.stringify(result.data)));
     //     }else {

@@ -55,6 +55,7 @@ export function xhr(){
             .catch(reason => setText(reason));
 }
 
+/*Will fail if one request failed */
 export function allPromises(){
     let categories = axios.get("http://localhost:3000/itemCategories");
     let statuses = axios.get("http://localhost:3000/orderStatuses");
@@ -75,13 +76,13 @@ export function allPromises(){
             })
 
 }
-
+/*Will still return data even if one request failed */
 export function allSettled(){
     let categories = axios.get("http://localhost:3000/itemCategories");
     let statuses = axios.get("http://localhost:3000/orderStatuses");
     let userTypes =  axios.get("http://localhost:3000/userTypes");
     let addressTypes = axios.get("http://localhost:3000/addressTypes");
-    /*Will wait for all promises to all settled before calling the then()*/
+    /*Will wait for all promises to all settled before calling the then().*/
     Promise.allSettled([categories,statuses,userTypes,addressTypes])
             .then((values) => {
                 // console.log(values);// values is an array of object 

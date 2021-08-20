@@ -44,7 +44,6 @@ export function callbacks() {
           return t.description;
         }
       })[0];
-     
 
       setText(`Order Status: ${description}`);
     };
